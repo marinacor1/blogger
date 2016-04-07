@@ -4,8 +4,8 @@
 
   <p class="comment"><%= comment.body %></p>
   <%= f.label :author_name, "Your Name"  %>
-<%= f.label :author_name, "Your comment"  %>
-<% end %>
+  <%= f.label :author_name, "Your Comment"  %>
+  <% end %>
 
 </div>
 <p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</p>
