@@ -39,7 +39,6 @@ end
   end
 
   def destroy
-    #add flash
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comments_path
