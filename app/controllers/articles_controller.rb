@@ -27,6 +27,8 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @comment = Comment.new
+    @tag_list = Tag.new
   end
 
   def update
