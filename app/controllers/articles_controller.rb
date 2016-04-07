@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def create
@@ -18,7 +20,7 @@ class ArticlesController < ApplicationController
     @article.body = params[:article][:body]
     @article.save
     redirect_to article_path(@article)
-    #add flash
+    flash.notice = "Article '#{@article.title}' Created!"
   end
 
   def edit
@@ -35,9 +37,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    #add flash
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+    flash.notice = "Article '#{@article.title}' Deleted!"
   end
 end
